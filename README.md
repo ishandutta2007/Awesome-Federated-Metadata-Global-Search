@@ -1,6 +1,6 @@
 # Awesome-Federated-Metadata-Global-Search
 
-# Top Federated Metadata & Global Search Ecosystem
+## Top Federated Metadata & Global Search Ecosystem
 
 **Curated List of SaaS Platforms & Open-Source GitHub Projects**  
 *Focused on Cross-Silo Search, Metadata Federation & Self-Hosted Enterprise Search*  
