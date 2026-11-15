@@ -1,75 +1,140 @@
-# Awesome-Federated-Metadata-Global-Search
+<div align="center">
 
-## Top Federated Metadata & Global Search Ecosystem
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Federated Metadata and Global Search" width="100%" />
+</p>
 
-**Curated List of SaaS Platforms & Open-Source GitHub Projects**  
-*Focused on Cross-Silo Search, Metadata Federation & Self-Hosted Enterprise Search*  
-**Last updated: March 2026**
+# 🌐 Awesome Federated Metadata & Global Search
 
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Federated Metadata & Global Search**. These tools help organizations query across disparate systems—SaaS apps, databases, file shares, and legacy repositories—without migrating data into a central store. The category spans **enterprise search platforms** with pre-built connectors and AI assistants (Glean, Coveo, Lucidworks) and **federated query engines** that leave data in place while unifying results (Swirl, Sercha).
+### Curated Collection of Enterprise Search Engines, Cross-Silo Federated Query Systems & Unified Metadata Catalogs
 
-**Examples** include Glean, Coveo, Lucidworks Fusion, Sinequa, Swirl, Sercha, Turing ES, and Apache Solr (the category leaders).
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Federated-Metadata-Global-Search/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Federated-Metadata-Global-Search?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Federated-Metadata-Global-Search/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Federated-Metadata-Global-Search?style=social" alt="GitHub forks" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Federated-Metadata-Global-Search/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
-**Open-source emphasis**: This section highlights every major active project for self-hosted federated search, open-source enterprise search engines, and community-driven metadata federation—ideal for organizations seeking data sovereignty and avoiding per-user or per-query SaaS pricing. The open-source landscape is genuinely functional: **Swirl** is a purpose-built federated search engine that queries across 100+ sources without moving data , **Sercha** provides a self-hosted team search platform with 11+ connectors and hybrid Vespa-powered ranking , and **Turing ES** delivers a Coveo/Algolia alternative with RAG and AI agents on Solr/Elasticsearch .
-
-Contributions welcome! Open an PR to add/update entries. Keep descriptions factual and link to official sites.
-
-## Table of Contents
-- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
-- [SaaS/Hosted Platforms](#saas-products)
-- [Open-Source GitHub Projects](#open-source-github-projects)
-- [How to Contribute](#how-to-contribute)
-- [Disclaimer](#disclaimer)
-
-## Sector Overview & Market Dynamics
-The enterprise search and metadata federation market is valued at approximately **$5.5B–$6.7B** (growing toward $12B+ at ~8–9% CAGR). The market exhibits a **bifurcated structure**: it is moderately concentrated and trending toward *winner-take-most* at the general corporate productivity layer (dominated by hyperscaler ecosystem suites like Microsoft 365 Copilot/Graph and Google Cloud Search), but remains **fragmented across specialized verticals** and cross-silo metadata federation where heterogeneous legacy sources, strict data-sovereignty rules, and complex permission ACLs resist single-vendor lock-in.
-
-## SaaS/Hosted Platforms
-
-| Product | Company Size (Valuation / Revenue) | Description | Pricing (Starting) | Free Tier / Trial Limits |
-|---------|-----------------------------------|-------------|-------------------|--------------------------|
-| **[AWS Kendra](https://aws.amazon.com/kendra/)** | **~$600B–$1T implied valuation** ($128.7B+ annual revenue, AWS segment of Amazon) | Managed enterprise search with NLP and deep learning. **End of support: no longer open to new customers starting July 30, 2026.** Existing customers can continue using the service. | **$0.32/hour** (~$230.40/month) for GenAI Enterprise Edition base capacity unit; Basic Developer Edition at $1.125/hour (~$810/month) | **750 hours free for first 30 days** across Developer/GenAI editions (1 base capacity unit up to 1,000 rescored queries/day; data source connector runtime excluded). No new signups after July 2026. |
-| **[Glean](https://www.glean.com/)** | **$4.6B valuation** (estimated ~$90M+ ARR) | **The enterprise search and AI assistant standard for tech companies.** 100+ SaaS integrations (Slack, Notion, Confluence, GDrive, SharePoint, Jira, GitHub) with **permission ACL inheritance** enforced at query time. **Glean Assistant** for RAG-based answers. 800+ enterprise customers including Databricks, Webflow, and Reddit. | **$45–$75/user/month** (billed annually; minimum contract floor typically starts at **$50,000–$60,000/year** with 50–100 seat minimums) | **No free tier and no self-serve free trial**; evaluations require sales-led demonstrations or custom paid Proof-of-Concept (POC) engagements. |
-| **[Coveo](https://www.coveo.com/)** | **~$440M CAD (~$320M USD) market cap** (TSX: CVO, $148.3M USD FY2026 revenue) | **Customer support and e-commerce search leader.** Relevance Cloud with native Salesforce/ServiceNow integration and **Coveo for Commerce**. 70+ connectors. 2,000+ customers including Xerox, Salesforce, and Tableau. | **$600/month** ($7,200/year billed annually) historical baseline tier; production enterprise deployments typically start around **$28,000–$50,000/year** | **14-day free trial** with access to select cloud connectors and machine learning models for prototyping (no credit card required). No permanent free tier. |
-| **[Lucidworks Fusion](https://www.lucidworks.com/)** | **~$326M valuation** ($270M–$370M peak private valuation, ~$41M–$47M estimated annual revenue) | **E-commerce site search and workplace search.** Built on Apache Solr with a commercial control plane. 400+ enterprise customers including Lowe's and REI. | **$28,000/year** average starting annual contract value on B2B procurement platforms (scaling to $79,000+/year based on query volume and node count) | **30-day evaluation trial** available for containerized/self-hosted sandbox deployments via sales consultation (14-day limit on extension trials; configuration locks upon trial expiry). No perpetual free tier. |
-| **[Sinequa](https://www.sinequa.com/)** | **~$40M–$43M annual revenue** (acquired by ChapsVision, which generates €200M revenue) | **Enterprise search for regulated industries** (pharma, financial services, aerospace). Strong permission fidelity, 200+ pre-built connectors, and compliance features. Deployments trusted by Airbus, Pfizer, and TotalEnergies. | **$60,000–$100,000/year** starting enterprise contract floor based on number of Search-Based Applications (SBAs) and indexed volume (large-scale deployments scale to $1M–$3M/year) | **No free tier and no public free trial**; evaluation is conducted exclusively via scoped multi-week enterprise Proof-of-Concept (PoC) pilots through sales. |
-
-## Open-Source GitHub Projects
-
-| Project | Star Badge | Description |
-|---------|------------|-------------|
-| **[Swirl](https://github.com/swirlai/swirl-search)** | [![Stars](https://img.shields.io/github/stars/swirlai/swirl-search?style=social&color=white)](https://github.com/swirlai/swirl-search/stargazers) | **The most purpose-built open-source federated search engine.** Queries **100+ sources simultaneously without moving data**—results come back from where they live, ranked with cosine similarity and Relevancy. **Sources include** Microsoft (Teams, Outlook, SharePoint, OneDrive), Google, AWS Kendra, BigQuery, Collibra, Elasticsearch, MongoDB, OpenSearch, Oracle, PostgreSQL, Qdrant, Snowflake, Solr, Vespa, Algolia, Confluence, GitHub, HubSpot, Jira, Salesforce, ServiceNow, Slack, and many more . **AI-powered metasearch** adapts queries to each source's API and understands true intent. **Community edition available on Azure Marketplace at $20/month** for private cloud deployment . **Best for organizations wanting true federated search** across heterogeneous silos without centralizing data . |
-| **[Sercha](https://github.com/sercha-oss/sercha-core)** | [![Stars](https://img.shields.io/github/stars/sercha-oss/sercha-core?style=social&color=white)](https://github.com/sercha-oss/sercha-core/stargazers) | **Self-hosted team search with hybrid Vespa-powered ranking.** Apache-2.0. **11+ connectors** including GitHub, GitLab, Slack, Notion, Confluence, Jira, Google Drive, Google Docs, Linear, Dropbox, and S3 . **Hybrid search** combining BM25 lexical and semantic embeddings, with query expansion and optional LLM integration (OpenAI or Ollama) . **OAuth2 authentication** (GitHub, Google) and **team management with RBAC**. **Docker Compose quickstart** with pre-built images; requires 4GB+ RAM (Vespa dependency) . **Best for teams wanting a self-hosted unified search layer** across SaaS sources with hybrid ranking . |
-| **[Turing ES](https://github.com/openviglet/turing)** | [![Stars](https://img.shields.io/github/stars/openviglet/turing?style=social&color=white)](https://github.com/openviglet/turing/stargazers) | **Open-source enterprise search + generative AI platform—a self-hosted Algolia/Coveo alternative.** **Apache-2.0 with no per-query, per-record, or per-seat metering** . **Multi-engine**: one API over Apache Solr, Elasticsearch, or embedded Apache Lucene—swap without rewriting . **Hybrid ranking**: BM25 keyword + kNN vector retrieval fused with Reciprocal Rank Fusion. **RAG chat with inline source citations**; AI agents with MCP servers. **Connectors** for Adobe AEM, WordPress, databases, filesystem, and web crawls via Viglet Dumont (separate extraction product) . **Runs fully offline** for air-gapped/regulated deployments . **Docker Compose or Kubernetes** deployment . **Best for teams wanting a complete search + AI platform** with zero licensing fees and full data control . |
-| **[Apache Solr](https://github.com/apache/solr)** | [![Stars](https://img.shields.io/github/stars/apache/solr?style=social&color=white)](https://github.com/apache/solr/stargazers) | **The foundational open-source enterprise search engine.** Apache-2.0, Apache Software Foundation governance. **Mature faceting, schema control, and streaming expressions** for document and site search. **SolrCloud** uses ZooKeeper for cluster coordination; user-managed mode runs without central coordination . **Vector search** via DenseVectorField with HNSW since Solr 9.0. **Trade-off**: more manual configuration than Elasticsearch—schema.xml and collections define the contract between indexing and relevance tuning . **Best for teams wanting a proven, vendor-independent search foundation** that they operate themselves . |
-| **[Elasticsearch](https://github.com/elastic/elasticsearch)** | [![Stars](https://img.shields.io/github/stars/elastic/elasticsearch?style=social&color=white)](https://github.com/elastic/elasticsearch/stargazers) | **The most widely deployed full-text and analytics search server.** **License**: Elastic License 2.0 by default (with free portions under SSPL/AGPLv3); **OpenSearch is the Apache-2.0 fork** . **JSON REST API**, built-in cluster discovery, and **Kibana** for dashboards. **Trade-off**: license terms have shifted historically—verify compatibility for your use case. **Best for teams already in the Elastic ecosystem** or needing log/observability search alongside enterprise content . |
-
-### Additional Strong Open-Source Options
-
-| Project | Star Badge | Description |
-|---------|------------|-------------|
-| **[OpenSearch](https://github.com/opensearch-project/OpenSearch)** | [![Stars](https://img.shields.io/github/stars/opensearch-project/OpenSearch?style=social&color=white)](https://github.com/opensearch-project/OpenSearch/stargazers) | **Apache-2.0 fork of Elasticsearch 7.10.2.** Elasticsearch-compatible REST API with **OpenSearch Dashboards**. **Linux Foundation governance** and AWS-managed service available. **Best for teams wanting Elasticsearch-style APIs without Elastic License restrictions** . |
-| **[Vespa](https://github.com/vespa-engine/vespa)** | [![Stars](https://img.shields.io/github/stars/vespa-engine/vespa?style=social&color=white)](https://github.com/vespa-engine/vespa/stargazers) | **Norwegian open-source engine for search, recommendation, and vector serving** with real-time updates. Powers Sercha's semantic search layer. **Best for teams needing low-latency vector and hybrid search** at scale . |
-| **[Datafari](https://github.com/francelabs/datafari)** | [![Stars](https://img.shields.io/github/stars/francelabs/datafari?style=social&color=white)](https://github.com/francelabs/datafari/stargazers) | **French open-source enterprise search solution built on Apache Solr** by France Labs. **Best for European organizations prioritizing EU-maintained search software** . |
-
-**Frameworks for building custom systems**: Choose **Swirl** for true federated search across 100+ sources without data movement , **Sercha** for a self-hosted unified search layer with hybrid ranking , or **Turing ES** for a complete search + RAG platform on Solr/Elasticsearch —all without per-user or per-query SaaS fees that compound at enterprise scale.
-
-## How to Contribute
-
-1. Fork the repo.
-2. Add/edit entries in `README.md` (follow existing format).
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-4. Submit PR with a short explanation.
-
-Star the repo if you find it useful!
-
-## Disclaimer
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-- Federated search platforms query sensitive enterprise data across silos; **permission fidelity is critical**—ensure the search layer inherits source ACLs rather than exposing restricted content to unauthorized users. Glean and Sinequa are specifically noted for enforcing source permissions at query time .
-- **AWS Kendra is closing to new customers on July 30, 2026**—do not plan new deployments on it . **Commercial pricing is enterprise-scale and opaque**: Glean runs **~$300/user/year** , Coveo **$250K–$2M/year** , and Lucidworks **$100K–$1M/year** . **Open-source federated search is genuinely viable but requires operational effort**: Swirl is purpose-built for federation without data movement but requires configuring each source connector , Sercha needs Vespa and 4GB+ RAM , and Turing ES requires Java 21+ and Maven for source builds . **Validate whether you need true federated query (Swirl) or a unified index (Sercha, Turing)** before committing.
+<p align="center">
+  <b>🔍 Query everywhere. 🔒 Move nothing. ⚡ Unify enterprise knowledge with permission fidelity.</b>
+</p>
 
 ---
 
-**Made for IT architects, knowledge managers, and organizations building cross-silo search infrastructure.**  
-Let's make federated metadata and global search more open, permission-aware, and data-sovereign.
+</div>
+
+A comprehensive, production-tested curated list of **SaaS platforms**, **open-source federated search engines**, **metadata catalogs**, and **cross-silo query protocols**. Designed for IT architects, search engineers, enterprise knowledge managers, and data platform leads building workplace search and RAG retrieval pipelines without moving sensitive data into a single centralized silo.
+
+> [!NOTE]
+> **Federated Search vs. Centralized Indexing**: Federated search queries native APIs where files live, preserving real-time freshness and source ACLs. Centralized enterprise search engines crawl and vectorize documents into a unified index for sub-second lexical/vector hybrid retrieval.
+
+---
+
+## 📑 Table of Contents
+- [📊 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [☁️ SaaS & Hosted Platforms](#️-saas--hosted-platforms)
+- [💻 Open-Source GitHub Projects](#-open-source-github-projects)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support & Community](#-support--community)
+- [⚠️ Disclaimer](#️-disclaimer)
+- [📈 Star History](#-star-history)
+
+---
+
+## 📊 Sector Overview & Market Dynamics
+
+The enterprise search and metadata federation market is valued at approximately **$5.5B–$6.7B** globally and is projected to cross **$12B+** by the early 2030s (growing at ~8–9% CAGR). 
+
+The market exhibits a **bifurcated structure**:
+- **Workplace Productivity Layer (Moderately Concentrated / Winner-Take-Most)**: Dominated by hyperscaler productivity bundles (Microsoft 365 Copilot / Graph and Google Cloud Search / Workspace) and breakout AI search leaders like Glean.
+- **Enterprise Core & Cross-Silo Federation (Highly Fragmented)**: Governed by diverse legacy architectures, on-premises systems (SAP, Jira, Confluence, Documentum, mainframe repositories), multi-cloud lakes (Snowflake, BigQuery, S3), and strict data-sovereignty mandates where zero-data-movement federated query engines (Swirl, Trino) and self-hosted open-source search platforms (Elasticsearch, OpenSearch, Vespa, DataHub) are essential.
+
+---
+
+## ☁️ SaaS & Hosted Platforms
+
+Enterprise SaaS platforms that unify fragmented company tools into a single conversational or search interface.
+
+| Product | Company Size (Valuation / Revenue) | Description | Pricing (Starting) | Free Tier / Trial Limits |
+|---------|-----------------------------------|-------------|-------------------|--------------------------|
+| **[AWS Kendra](https://aws.amazon.com/kendra/)** | **~$600B–$1T implied valuation** ($128.7B+ annual revenue, AWS segment of Amazon) | Managed enterprise cognitive search powered by machine learning and NLP. *(Note: End of support for new customer sign-ups begins July 30, 2026; existing customers retain ongoing service).* | **$0.32/hour** (~$230.40/month) base capacity unit for GenAI Enterprise Edition; Developer Edition starts at $1.125/hour (~$810/month). | **750 hours free for first 30 days** across Developer/GenAI editions (1 base unit up to 1,000 rescored queries/day; connector sync time billed separately). No new signups after July 2026. |
+| **[Glean](https://www.glean.com/)** | **$4.6B valuation** (~$90M+ estimated ARR) | **The enterprise search and workplace AI assistant standard.** 100+ native SaaS connectors (Slack, Google Drive, Jira, Notion, GitHub) with query-time **permission ACL inheritance** and enterprise RAG synthesis. | **$45–$75/user/month** (annual agreement; starting contract minimum floor is typically **$50,000–$60,000/year** with 50–100 seat minimums). | **No permanent free tier and no self-serve free trial**; evaluation is conducted via custom sales demos and paid Proof-of-Concept (POC) engagements. |
+| **[Coveo](https://www.coveo.com/)** | **~$440M CAD (~$320M USD) market cap** (TSX: CVO, $148.3M USD FY2026 revenue) | **AI search, customer support, and digital commerce discovery leader.** Relevance Cloud platform featuring unified hybrid search, automatic query tuning, and deep Salesforce/ServiceNow connectors. | **$600/month** ($7,200/year billed annually) historical baseline plan; production enterprise deployments typically start around **$28,000–$50,000/year**. | **14-day free trial** with access to select cloud connectors and machine learning relevance models for prototyping (no credit card required). No permanent free tier. |
+| **[Lucidworks Fusion](https://www.lucidworks.com/)** | **~$326M valuation** ($270M–$370M peak private valuation, ~$41M–$47M estimated annual revenue) | **Enterprise-grade commerce and workplace search platform.** Built upon Apache Solr with a proprietary commercial AI/ML orchestration layer and analytics studio. | **$28,000/year** average starting annual contract value on B2B procurement benchmarks (scaling to $79,000+/year based on node capacity and query throughput). | **30-day evaluation trial** available for containerized or self-hosted sandbox setups via sales consultation (14-day extension modules; config locks on expiration). No perpetual free tier. |
+| **[Sinequa](https://www.sinequa.com/)** | **~$40M–$43M annual revenue** (part of ChapsVision, €200M group revenue) | **Cognitive search for highly regulated industries** (pharmaceuticals, aerospace, banking). 200+ out-of-the-box enterprise connectors, neural search, and high-fidelity ACL security trimming. | **$60,000–$100,000/year** starting enterprise contract floor based on deployed Search-Based Applications (SBAs) and indexed corpus volume (large deployments scale to $1M–$3M/year). | **No perpetual free tier and no public self-serve trial**; evaluation is available via structured multi-week Proof-of-Concept (PoC) pilot programs arranged through sales. |
+
+---
+
+## 💻 Open-Source GitHub Projects
+
+Self-hosted enterprise search engines, federated query coordinators, and cross-silo metadata platforms. 
+
+> Sorted by GitHub stargazers count (descending):
+
+| Project | Star Badge | Description | Primary Use Case |
+|---------|:----------:|-------------|------------------|
+| **[Elasticsearch](https://github.com/elastic/elasticsearch)** | [![Stars](https://img.shields.io/github/stars/elastic/elasticsearch?style=social&color=white)](https://github.com/elastic/elasticsearch/stargazers) | Distributed, multitenant-capable full-text and vector search engine with JSON REST APIs, ELK stack integration, and HNSW vector indexing. | Enterprise search, log analytics & hybrid retrieval backbone |
+| **[Meilisearch](https://github.com/meilisearch/meilisearch)** | [![Stars](https://img.shields.io/github/stars/meilisearch/meilisearch?style=social&color=white)](https://github.com/meilisearch/meilisearch/stargazers) | Lightning-fast, hyper-relevant, typo-tolerant search engine written in Rust. Features out-of-the-box prefix search, hybrid search, and intuitive SDKs. | Front-end application search & instant typo-tolerant site search |
+| **[SearXNG](https://github.com/searxng/searxng)** | [![Stars](https://img.shields.io/github/stars/searxng/searxng?style=social&color=white)](https://github.com/searxng/searxng/stargazers) | Privacy-respecting, self-hosted metasearch engine that aggregates and federates queries across 70+ search services without tracking users. | Privacy-first self-hosted web and organizational metasearch |
+| **[Qdrant](https://github.com/qdrant/qdrant)** | [![Stars](https://img.shields.io/github/stars/qdrant/qdrant?style=social&color=white)](https://github.com/qdrant/qdrant/stargazers) | High-performance vector database and similarity search engine written in Rust with extended payload-based metadata filtering. | High-throughput vector search & metadata-filtered retrieval for RAG |
+| **[Onyx](https://github.com/onyx-dot-app/onyx)** | [![Stars](https://img.shields.io/github/stars/onyx-dot-app/onyx?style=social&color=white)](https://github.com/onyx-dot-app/onyx/stargazers) | Open-source enterprise search and workplace AI assistant (formerly Danswer). Directly connects to Google Drive, Slack, Confluence, Jira, and GitHub with document-level access control. | Self-hosted Glean alternative with turn-key workplace connectors & GenAI chat |
+| **[OpenMetadata](https://github.com/open-metadata/OpenMetadata)** | [![Stars](https://img.shields.io/github/stars/open-metadata/OpenMetadata?style=social&color=white)](https://github.com/open-metadata/OpenMetadata/stargazers) | Unified metadata platform featuring end-to-end data discovery, automated lineage, data quality profiler, and central enterprise governance with open metadata standards. | Cross-silo enterprise metadata catalog, data discovery & governance |
+| **[OpenSearch](https://github.com/opensearch-project/OpenSearch)** | [![Stars](https://img.shields.io/github/stars/opensearch-project/OpenSearch?style=social&color=white)](https://github.com/opensearch-project/OpenSearch/stargazers) | Community-driven, Apache-2.0 open-source search and analytics suite forked from Elasticsearch 7.10.2. Maintained under the Linux Foundation with OpenSearch Dashboards. | Vendor-neutral enterprise search, distributed indexing & log analytics |
+| **[Trino](https://github.com/trinodb/trino)** | [![Stars](https://img.shields.io/github/stars/trinodb/trino?style=social&color=white)](https://github.com/trinodb/trino/stargazers) | Fast distributed SQL query engine for federated queries against heterogeneous data sources (PostgreSQL, MySQL, S3, Hive, BigQuery, Kafka, Snowflake) without copying data. | Federated cross-database query engine & data lake SQL search |
+| **[DataHub](https://github.com/datahub-project/datahub)** | [![Stars](https://img.shields.io/github/stars/datahub-project/datahub?style=social&color=white)](https://github.com/datahub-project/datahub/stargazers) | The extensible metadata platform originally built at LinkedIn. Real-time stream-based architecture powering federated enterprise metadata search, graph lineage, and governance. | Global metadata search & enterprise data mesh catalog |
+| **[Vespa](https://github.com/vespa-engine/vespa)** | [![Stars](https://img.shields.io/github/stars/vespa-engine/vespa?style=social&color=white)](https://github.com/vespa-engine/vespa/stargazers) | High-throughput distributed search, vector retrieval, and real-time tensor computation engine developed by Yahoo. Powers low-latency hybrid BM25 and vector ranking at massive scale. | Large-scale semantic search, AI vector serving & hybrid ranking |
+| **[Amundsen](https://github.com/amundsen-io/amundsen)** | [![Stars](https://img.shields.io/github/stars/amundsen-io/amundsen?style=social&color=white)](https://github.com/amundsen-io/amundsen/stargazers) | Metadata driven application created at Lyft for data discovery, data asset indexing, and enterprise-wide knowledge curation. | Enterprise data portal & metadata search for analytics teams |
+| **[Apache Lucene](https://github.com/apache/lucene)** | [![Stars](https://img.shields.io/github/stars/apache/lucene?style=social&color=white)](https://github.com/apache/lucene/stargazers) | The foundational high-performance, full-featured search library written in Java powering Elasticsearch, Solr, and modern vector extensions. | Core indexing & inverted search library |
+| **[Swirl](https://github.com/swirlai/swirl-search)** | [![Stars](https://img.shields.io/github/stars/swirlai/swirl-search?style=social&color=white)](https://github.com/swirlai/swirl-search/stargazers) | **Purpose-built open-source federated search engine.** Queries 100+ native APIs (SharePoint, Jira, Salesforce, Slack, databases, Elasticsearch) without moving data, re-ranking unified results with cosine similarity and LLM extractors. | True federated zero-data-movement enterprise query engine |
+| **[Apache Solr](https://github.com/apache/solr)** | [![Stars](https://img.shields.io/github/stars/apache/solr?style=social&color=white)](https://github.com/apache/solr/stargazers) | The battle-tested Apache enterprise search platform built on Lucene. SolrCloud clustering, advanced faceting, rich document handling (Tika), and dense vector indexing. | Self-managed enterprise search infrastructure & document faceting |
+| **[Datafari](https://github.com/francelabs/datafari)** | [![Stars](https://img.shields.io/github/stars/francelabs/datafari?style=social&color=white)](https://github.com/francelabs/datafari/stargazers) | French open-source enterprise search solution combining Apache Solr, Apache ManifoldCF, and OCR extraction. Optimized for GDPR compliance and sovereign European enterprise deployments. | Self-hosted European sovereign workplace search |
+| **[Turing ES](https://github.com/openviglet/turing)** | [![Stars](https://img.shields.io/github/stars/openviglet/turing?style=social&color=white)](https://github.com/openviglet/turing/stargazers) | Open-source enterprise search and Generative AI platform (Algolia/Coveo alternative). Multi-engine abstraction layer over Solr, Elasticsearch, and Lucene with RAG chat and MCP servers. | Free Algolia/Coveo alternative with integrated RAG chat & AI agents |
+
+---
+
+## 🤝 How to Contribute
+
+We welcome community contributions, new project submissions, and corrections!
+
+1. 🍴 **Fork** this repository.
+2. 🌿 **Create a branch** for your updates (`git checkout -b feature/add-new-search-tool`).
+3. ✍️ **Add or edit** entries in [README.md](file:///C:/Users/ishan/Documents/Projects/Awesome-Federated-Metadata-Global-Search/README.md) following the existing Markdown table format:
+   - Provide the exact GitHub link and project name.
+   - Include the `[![Stars](https://img.shields.io/github/stars/<owner>/<repo>?style=social&color=white)](https://github.com/<owner>/<repo>/stargazers)` star badge.
+   - Add a concise, factual description with primary use cases and pricing transparency.
+4. 🚀 **Submit a Pull Request** with a descriptive summary of your changes.
+
+---
+
+## 💖 Support & Community
+
+If you find this curated collection useful for your architecture research or open-source stack, consider showing your support:
+
+- ⭐ **Star this repository** to help other architects, developers, and data engineers discover it.
+- 🍴 **Fork it** and build your team's internal enterprise search evaluation guide.
+- 📢 **Share** with your engineering network on LinkedIn, X, or Discord.
+- ☕ **Sponsor & Buy a Coffee**: Support ongoing maintenance and curated ecosystem research via the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007).
+
+---
+
+## ⚠️ Disclaimer
+
+- This is a community-curated directory intended for research, evaluation, and educational purposes. Inclusion does not imply commercial sponsorship or endorsement.
+- **Enterprise Permission Fidelity**: Querying cross-silo internal data demands rigorous ACL verification. Always ensure the search layer enforces source-level access control permissions at query time rather than leaking confidential internal data across department boundaries.
+- **Service Lifecycles & Pricing**: Pricing and commercial plans change over time. Verify current tiers and SLAs directly with software vendors prior to production procurement.
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://www.star-history.com/svg?repos=ishandutta2007/Awesome-Federated-Metadata-Global-Search&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/Awesome-Federated-Metadata-Global-Search&type=date&legend=top-left)
+
+---
+
+<div align="center">
+
+Made with ❤️ for IT architects, knowledge managers, and data engineers building open and sovereign search infrastructure.
+
+</div>
