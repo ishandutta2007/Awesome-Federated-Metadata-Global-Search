@@ -1,191 +1,303 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
   <defs>
     <!-- Background Gradients -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070913"/>
-      <stop offset="50%" stop-color="#0c1228"/>
-      <stop offset="100%" stop-color="#050711"/>
+      <stop offset="0%" stop-color="#05070f"/>
+      <stop offset="45%" stop-color="#0a1026"/>
+      <stop offset="80%" stop-color="#070c1e"/>
+      <stop offset="100%" stop-color="#04060d"/>
     </linearGradient>
 
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#60a5fa"/>
-      <stop offset="40%" stop-color="#a78bfa"/>
-      <stop offset="80%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#818cf8"/>
+    <!-- Text Gradients -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="35%" stop-color="#818cf8"/>
+      <stop offset="70%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
     </linearGradient>
 
-    <linearGradient id="glowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    <linearGradient id="cyanPurpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
     </linearGradient>
 
-    <linearGradient id="glowGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
+    <!-- Ambient Glow Gradients -->
+    <radialGradient id="meshGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="centerCoreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#6366f1" stop-opacity="0.4"/>
       <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
-    </linearGradient>
+    </radialGradient>
 
+    <!-- Card/Pill Gradients -->
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
     </linearGradient>
 
-    <!-- Grid Pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.25"/>
-      <circle cx="40" cy="40" r="1" fill="#64748b" fill-opacity="0.3"/>
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Cyber Grid Pattern -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.4"/>
+      <circle cx="40" cy="40" r="1" fill="#475569" fill-opacity="0.4"/>
     </pattern>
 
-    <!-- Filter for glow -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    <!-- Blur & Glow Filters -->
+    <filter id="coreGlowFilter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
 
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- CSS Keyframe Animations for Living Dynamic Aspects -->
     <style>
-      .node-pulse {
-        animation: pulse 4s ease-in-out infinite alternate;
+      /* Flowing Query Signals */
+      .signal-fast {
+        stroke-dasharray: 6, 12;
+        animation: flowDash 14s linear infinite;
       }
-      .node-pulse-2 {
-        animation: pulse 4s ease-in-out infinite alternate 2s;
+      .signal-med {
+        stroke-dasharray: 8, 14;
+        animation: flowDashRev 18s linear infinite;
       }
-      .flow-line {
-        stroke-dasharray: 8, 8;
-        animation: dash 25s linear infinite;
+      .signal-slow {
+        stroke-dasharray: 5, 15;
+        animation: flowDash 22s linear infinite;
       }
-      .flow-line-rev {
-        stroke-dasharray: 6, 6;
-        animation: dash-rev 20s linear infinite;
+
+      /* Core Pulsing Waves */
+      .pulse-ring-1 {
+        transform-origin: 970px 210px;
+        animation: pulseRing 3.6s ease-out infinite;
       }
-      .ring-rotate {
-        transform-origin: 980px 200px;
-        animation: rotate 30s linear infinite;
+      .pulse-ring-2 {
+        transform-origin: 970px 210px;
+        animation: pulseRing 3.6s ease-out infinite 1.8s;
       }
-      .particle-float {
-        animation: float 6s ease-in-out infinite alternate;
+
+      /* Orbital Rotation */
+      .orbit-cw {
+        transform-origin: 970px 210px;
+        animation: rotateCW 32s linear infinite;
       }
-      @keyframes dash {
-        to { stroke-dashoffset: -1000; }
+      .orbit-ccw {
+        transform-origin: 970px 210px;
+        animation: rotateCCW 24s linear infinite;
       }
-      @keyframes dash-rev {
-        to { stroke-dashoffset: 1000; }
+
+      /* Floating Ambient Orbs */
+      .float-ambient-1 {
+        animation: floatOrb 7s ease-in-out infinite alternate;
       }
-      @keyframes pulse {
-        0% { transform: scale(1); opacity: 0.6; }
-        100% { transform: scale(1.15); opacity: 1; }
+      .float-ambient-2 {
+        animation: floatOrb 9s ease-in-out infinite alternate-reverse;
       }
-      @keyframes rotate {
+
+      /* Dynamic Node Breathing */
+      .node-breathe {
+        animation: breathe 3s ease-in-out infinite alternate;
+      }
+
+      /* Keyframes */
+      @keyframes flowDash {
+        to { stroke-dashoffset: -400; }
+      }
+      @keyframes flowDashRev {
+        to { stroke-dashoffset: 400; }
+      }
+      @keyframes rotateCW {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
       }
-      @keyframes float {
-        0% { transform: translateY(0px) scale(0.95); opacity: 0.4; }
-        100% { transform: translateY(-15px) scale(1.05); opacity: 0.85; }
+      @keyframes rotateCCW {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+      }
+      @keyframes pulseRing {
+        0% { transform: scale(0.65); opacity: 0.85; stroke-width: 3px; }
+        50% { opacity: 0.45; }
+        100% { transform: scale(1.65); opacity: 0; stroke-width: 0.8px; }
+      }
+      @keyframes floatOrb {
+        0% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
+        100% { transform: translate(-20px, 15px) scale(1.12); opacity: 0.65; }
+      }
+      @keyframes breathe {
+        0% { transform: scale(0.97); }
+        100% { transform: scale(1.03); }
       }
     </style>
   </defs>
 
-  <!-- Canvas Background -->
-  <rect width="1200" height="400" fill="url(#bgGrad)"/>
-  <rect width="1200" height="400" fill="url(#grid)"/>
+  <!-- ================= BACKGROUND LAYERS ================= -->
+  <!-- Base Background -->
+  <rect width="1200" height="420" fill="url(#bgGrad)"/>
+  <rect width="1200" height="420" fill="url(#cyberGrid)"/>
 
-  <!-- Dynamic Glowing Orbs in Background -->
-  <circle cx="150" cy="80" r="160" fill="url(#glowGrad1)" filter="url(#glow)" class="particle-float"/>
-  <circle cx="1050" cy="220" r="200" fill="url(#glowGrad2)" filter="url(#glow)" class="particle-float" style="animation-delay: -3s;"/>
-  <circle cx="600" cy="350" r="180" fill="url(#glowGrad1)" filter="url(#glow)" class="particle-float" style="animation-delay: -1.5s;"/>
+  <!-- Ambient Dynamic Glowing Fields -->
+  <circle cx="200" cy="90" r="180" fill="url(#meshGlow)" class="float-ambient-1"/>
+  <circle cx="970" cy="210" r="230" fill="url(#meshGlow)" class="float-ambient-2"/>
+  <circle cx="550" cy="380" r="160" fill="url(#meshGlow)" class="float-ambient-1" style="animation-delay: -3s;"/>
 
-  <!-- Network / Federated Mesh Lines (Background Dynamic Layer) -->
-  <g opacity="0.45">
-    <!-- Connecting routes to central query node -->
-    <path d="M 820 100 C 900 130, 930 160, 980 200" fill="none" stroke="#60a5fa" stroke-width="1.8" class="flow-line"/>
-    <path d="M 1120 110 C 1070 140, 1020 170, 980 200" fill="none" stroke="#a78bfa" stroke-width="1.8" class="flow-line-rev"/>
-    <path d="M 830 300 C 890 280, 930 250, 980 200" fill="none" stroke="#38bdf8" stroke-width="1.8" class="flow-line"/>
-    <path d="M 1130 290 C 1080 270, 1020 240, 980 200" fill="none" stroke="#818cf8" stroke-width="1.8" class="flow-line-rev"/>
-    <path d="M 980 60 L 980 200" fill="none" stroke="#c084fc" stroke-width="1.8" class="flow-line"/>
-    <path d="M 980 340 L 980 200" fill="none" stroke="#34d399" stroke-width="1.8" class="flow-line-rev"/>
+  <!-- ================= DYNAMIC FEDERATED NETWORK (RIGHT CANVAS) ================= -->
+  <!-- Confined strictly to x: 740 - 1180 so it never intersects foreground text -->
+  <g id="federated-dynamic-network">
+    <!-- Concentric Radiating Pulsing Waves from Search Nexus -->
+    <circle cx="970" cy="210" r="60" fill="none" stroke="#38bdf8" class="pulse-ring-1"/>
+    <circle cx="970" cy="210" r="60" fill="none" stroke="#a78bfa" class="pulse-ring-2"/>
 
-    <!-- Orbital ring around central aggregator -->
-    <g class="ring-rotate">
-      <circle cx="980" cy="200" r="85" fill="none" stroke="#6366f1" stroke-width="1.2" stroke-dasharray="8, 12" opacity="0.6"/>
-      <circle cx="1065" cy="200" r="4.5" fill="#38bdf8"/>
-      <circle cx="895" cy="200" r="4.5" fill="#a855f7"/>
-      <circle cx="980" cy="115" r="4.5" fill="#34d399"/>
-      <circle cx="980" cy="285" r="4.5" fill="#f43f5e"/>
-    </g>
-
-    <!-- Satellite Federated Nodes -->
-    <g transform="translate(820, 100)">
-      <circle cx="0" cy="0" r="22" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
-      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#93c5fd" text-anchor="middle">SaaS</text>
-    </g>
-    <g transform="translate(1120, 110)">
-      <circle cx="0" cy="0" r="22" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
-      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#c4b5fd" text-anchor="middle">SQL</text>
-    </g>
-    <g transform="translate(830, 300)">
-      <circle cx="0" cy="0" r="22" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
-      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#6ee7b7" text-anchor="middle">Docs</text>
-    </g>
-    <g transform="translate(1130, 290)">
-      <circle cx="0" cy="0" r="22" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
-      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#a5b4fc" text-anchor="middle">Vector</text>
-    </g>
-    <g transform="translate(980, 60)">
-      <circle cx="0" cy="0" r="18" fill="#1e293b" stroke="#c084fc" stroke-width="1.8"/>
-      <text x="0" y="3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#e9d5ff" text-anchor="middle">Git</text>
-    </g>
-    <g transform="translate(980, 340)">
-      <circle cx="0" cy="0" r="18" fill="#1e293b" stroke="#38bdf8" stroke-width="1.8"/>
-      <text x="0" y="3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#bae6fd" text-anchor="middle">Cloud</text>
+    <!-- Dynamic Flow Lines Connecting Decentralized Silos to Global Hub -->
+    <g opacity="0.6">
+      <!-- Node: SaaS (Top Left) -->
+      <path d="M 800 95 C 860 120, 910 155, 970 210" fill="none" stroke="#38bdf8" stroke-width="2" class="signal-fast"/>
+      <!-- Node: SQL Lake (Top Right) -->
+      <path d="M 1130 100 C 1080 135, 1030 165, 970 210" fill="none" stroke="#a78bfa" stroke-width="2" class="signal-med"/>
+      <!-- Node: Doc Silos (Bottom Left) -->
+      <path d="M 810 325 C 865 300, 915 260, 970 210" fill="none" stroke="#34d399" stroke-width="2" class="signal-med"/>
+      <!-- Node: Vector DBs (Bottom Right) -->
+      <path d="M 1130 320 C 1075 295, 1025 255, 970 210" fill="none" stroke="#818cf8" stroke-width="2" class="signal-fast"/>
+      <!-- Node: Git Repos (Top Center) -->
+      <path d="M 970 55 L 970 210" fill="none" stroke="#c084fc" stroke-width="1.8" class="signal-slow"/>
+      <!-- Node: Object Store (Bottom Center) -->
+      <path d="M 970 365 L 970 210" fill="none" stroke="#f472b6" stroke-width="1.8" class="signal-slow"/>
     </g>
 
-    <!-- Central Federated Global Search Core Node -->
-    <g transform="translate(980, 200)">
-      <circle cx="0" cy="0" r="42" fill="#0f172a" stroke="#818cf8" stroke-width="3" filter="url(#glow)"/>
-      <circle cx="0" cy="0" r="34" fill="#1e1b4b" stroke="#60a5fa" stroke-width="1.5"/>
-      <path d="M -10 -4 A 12 12 0 1 0 10 -4 A 12 12 0 1 0 -10 -4 M 8 5 L 17 14" fill="none" stroke="#67e8f9" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Counter-Rotating Outer Orbit Ring with Dynamic Satellites -->
+    <g class="orbit-ccw">
+      <circle cx="970" cy="210" r="115" fill="none" stroke="#334155" stroke-width="1.2" stroke-dasharray="4, 10" opacity="0.65"/>
+      <circle cx="1085" cy="210" r="4" fill="#38bdf8" filter="url(#softGlow)"/>
+      <circle cx="855" cy="210" r="4" fill="#a78bfa" filter="url(#softGlow)"/>
+      <circle cx="970" cy="95" r="3.5" fill="#34d399"/>
+      <circle cx="970" cy="325" r="3.5" fill="#f43f5e"/>
+    </g>
+
+    <!-- Clockwise Inner Orbit Ring -->
+    <g class="orbit-cw">
+      <circle cx="970" cy="210" r="82" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-dasharray="10, 14" opacity="0.75"/>
+      <circle cx="1052" cy="210" r="4.5" fill="#67e8f9" filter="url(#softGlow)"/>
+      <circle cx="888" cy="210" r="4.5" fill="#c084fc" filter="url(#softGlow)"/>
+      <circle cx="970" cy="128" r="4" fill="#60a5fa"/>
+      <circle cx="970" cy="292" r="4" fill="#fbbf24"/>
+    </g>
+
+    <!-- Decentralized Silo Nodes (Interactive Federated Endpoints) -->
+    <!-- Node 1: SaaS Cloud -->
+    <g transform="translate(800, 95)">
+      <circle cx="0" cy="0" r="24" fill="#0f172a" stroke="#38bdf8" stroke-width="2" filter="url(#softGlow)"/>
+      <circle cx="0" cy="0" r="19" fill="#1e293b"/>
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#7dd3fc" text-anchor="middle">SaaS</text>
+    </g>
+
+    <!-- Node 2: SQL / Lakehouse -->
+    <g transform="translate(1130, 100)">
+      <circle cx="0" cy="0" r="24" fill="#0f172a" stroke="#a78bfa" stroke-width="2" filter="url(#softGlow)"/>
+      <circle cx="0" cy="0" r="19" fill="#1e293b"/>
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#c4b5fd" text-anchor="middle">SQL</text>
+    </g>
+
+    <!-- Node 3: Enterprise Docs -->
+    <g transform="translate(810, 325)">
+      <circle cx="0" cy="0" r="24" fill="#0f172a" stroke="#34d399" stroke-width="2" filter="url(#softGlow)"/>
+      <circle cx="0" cy="0" r="19" fill="#1e293b"/>
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#6ee7b7" text-anchor="middle">Docs</text>
+    </g>
+
+    <!-- Node 4: Vector Store / RAG -->
+    <g transform="translate(1130, 320)">
+      <circle cx="0" cy="0" r="24" fill="#0f172a" stroke="#818cf8" stroke-width="2" filter="url(#softGlow)"/>
+      <circle cx="0" cy="0" r="19" fill="#1e293b"/>
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#a5b4fc" text-anchor="middle">Vector</text>
+    </g>
+
+    <!-- Node 5: Git / Code -->
+    <g transform="translate(970, 55)">
+      <circle cx="0" cy="0" r="20" fill="#0f172a" stroke="#c084fc" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="16" fill="#1e293b"/>
+      <text x="0" y="3.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#e9d5ff" text-anchor="middle">Git</text>
+    </g>
+
+    <!-- Node 6: Cloud Object Stores -->
+    <g transform="translate(970, 365)">
+      <circle cx="0" cy="0" r="20" fill="#0f172a" stroke="#f472b6" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="16" fill="#1e293b"/>
+      <text x="0" y="3.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#fbcfe8" text-anchor="middle">S3/Lake</text>
+    </g>
+
+    <!-- Central Federated Query Nexus & Global Search Core -->
+    <g transform="translate(970, 210)">
+      <!-- Outer Core Ambient Halo -->
+      <circle cx="0" cy="0" r="48" fill="url(#centerCoreGlow)"/>
+      <!-- Core Container -->
+      <circle cx="0" cy="0" r="40" fill="#0b0f19" stroke="#6366f1" stroke-width="2.5" filter="url(#softGlow)"/>
+      <circle cx="0" cy="0" r="32" fill="#1e1b4b" stroke="#38bdf8" stroke-width="1.5"/>
+      <!-- Sleek Magnifier & Holographic Reticle Icon -->
+      <path d="M -9 -4 A 11 11 0 1 0 9 -4 A 11 11 0 1 0 -9 -4 M 7 5 L 16 14" fill="none" stroke="#67e8f9" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="-1" cy="-4" r="3" fill="#38bdf8" opacity="0.75"/>
     </g>
   </g>
 
-  <!-- Main Foreground Content (Always Crisp & Legible) -->
-  <g transform="translate(80, 0)">
-    <!-- Badge / Pill -->
+  <!-- ================= FOREGROUND HERO CONTENT (LEFT CANVAS) ================= -->
+  <!-- Layered on top with absolute clarity and contrast. Guaranteed free of overlap. -->
+  <g transform="translate(75, 0)">
+    <!-- Top Ecosystem Pill Tag -->
     <g transform="translate(0, 68)">
-      <rect width="260" height="30" rx="15" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2" opacity="0.95"/>
-      <circle cx="16" cy="15" r="4.5" fill="#10b981"/>
-      <text x="30" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" fill="#93c5fd" letter-spacing="1">CURATED AWESOME ECOSYSTEM</text>
+      <rect width="280" height="32" rx="16" fill="url(#pillGrad)" stroke="#3b82f6" stroke-width="1.3"/>
+      <!-- Pulsing Green Live Status Indicator -->
+      <circle cx="18" cy="16" r="4.5" fill="#10b981"/>
+      <circle cx="18" cy="16" r="8" fill="none" stroke="#10b981" stroke-width="1" opacity="0.6"/>
+      <text x="34" y="20.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#93c5fd" letter-spacing="1">CURATED AWESOME ECOSYSTEM</text>
     </g>
 
-    <!-- Title (Gradient & High Contrast) -->
-    <text x="0" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" font-size="44" font-weight="800" fill="url(#textGrad)" letter-spacing="-1">
+    <!-- Main Title (Dual Line, Gradient + Crisp White) -->
+    <text x="0" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" font-size="44" font-weight="800" fill="url(#titleGrad)" letter-spacing="-1">
       Federated Metadata
     </text>
-    <text x="0" y="202" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-1">
+    <text x="0" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-1">
       &amp; Global Search
     </text>
 
-    <!-- Subtitle / Tagline -->
-    <text x="0" y="248" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="400" fill="#94a3b8">
-      Cross-Silo Query Engines &bull; Enterprise Search &bull; Unified Metadata Catalog
+    <!-- Subtitle / Architecture Pitch -->
+    <text x="0" y="250" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="400" fill="#94a3b8">
+      Cross-Silo Query Engines &bull; Enterprise Search &bull; Unified Catalogs
     </text>
 
-    <!-- Feature Tags Row -->
-    <g transform="translate(0, 285)">
-      <!-- Pill 1: Zero Data Movement -->
+    <!-- Architecture & Capability Feature Cards (Foreground Row) -->
+    <g transform="translate(0, 290)">
+      <!-- Card 1: Zero Data Movement -->
       <g transform="translate(0, 0)">
-        <rect width="180" height="32" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2"/>
-        <text x="14" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#e2e8f0">&#x26A1; Zero Data Movement</text>
+        <rect width="186" height="36" rx="9" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2"/>
+        <text x="14" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">&#x26A1; Zero Data Movement</text>
       </g>
 
-      <!-- Pill 2: Open-Source & SaaS -->
-      <g transform="translate(192, 0)">
-        <rect width="185" height="32" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2"/>
-        <text x="14" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#e2e8f0">&#x1F510; Permission Fidelity</text>
+      <!-- Card 2: Permission Fidelity -->
+      <g transform="translate(198, 0)">
+        <rect width="186" height="36" rx="9" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2"/>
+        <text x="14" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">&#x1F510; Permission Fidelity</text>
       </g>
 
-      <!-- Pill 3: Hybrid & Vector Ranking -->
-      <g transform="translate(389, 0)">
-        <rect width="185" height="32" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2"/>
-        <text x="14" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#e2e8f0">&#x1F9E0; Hybrid RAG &amp; Vector</text>
+      <!-- Card 3: Hybrid RAG & Vector -->
+      <g transform="translate(396, 0)">
+        <rect width="186" height="36" rx="9" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2"/>
+        <text x="14" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">&#x1F9E0; Hybrid RAG &amp; Vector</text>
       </g>
     </g>
   </g>
