@@ -277,7 +277,7 @@
 
     <!-- Subtitle / Architecture Pitch -->
     <text x="0" y="250" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="400" fill="#94a3b8">
-      Cross-Silo Query Engines &bull; Enterprise Search &bull; Unified Catalogs
+      Cross-Silo Query Engines &#x2022; Enterprise Search &#x2022; Unified Catalogs
     </text>
 
     <!-- Architecture & Capability Feature Cards (Foreground Row) -->
