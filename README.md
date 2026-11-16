@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Federated-Metadata-Global-Search/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Federated-Metadata-Global-Search?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Federated-Metadata-Global-Search/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Federated-Metadata-Global-Search?style=social" alt="GitHub_Stars" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Federated-Metadata-Global-Search/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Federated-Metadata-Global-Search?style=social" alt="GitHub forks" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Federated-Metadata-Global-Search/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
   <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
@@ -73,7 +73,7 @@ Self-hosted enterprise search engines, federated query coordinators, and cross-s
 
 > Sorted by GitHub stargazers count (descending):
 
-| Project | Star Badge | Description | Primary Use Case |
+| Project | Stars_Badge | Description | Primary Use Case |
 |---------|:----------:|-------------|------------------|
 | **[Elasticsearch](https://github.com/elastic/elasticsearch)** | [![Stars](https://img.shields.io/github/stars/elastic/elasticsearch?style=social&color=white)](https://github.com/elastic/elasticsearch/stargazers) | Distributed, multitenant-capable full-text and vector search engine with JSON REST APIs, ELK stack integration, and HNSW vector indexing. | Enterprise search, log analytics & hybrid retrieval backbone |
 | **[Meilisearch](https://github.com/meilisearch/meilisearch)** | [![Stars](https://img.shields.io/github/stars/meilisearch/meilisearch?style=social&color=white)](https://github.com/meilisearch/meilisearch/stargazers) | Lightning-fast, hyper-relevant, typo-tolerant search engine written in Rust. Features out-of-the-box prefix search, hybrid search, and intuitive SDKs. | Front-end application search & instant typo-tolerant site search |
@@ -102,7 +102,7 @@ We welcome community contributions, new project submissions, and corrections!
 2. 🌿 **Create a branch** for your updates (`git checkout -b feature/add-new-search-tool`).
 3. ✍️ **Add or edit** entries in [README.md](file:///C:/Users/ishan/Documents/Projects/Awesome-Federated-Metadata-Global-Search/README.md) following the existing Markdown table format:
    - Provide the exact GitHub link and project name.
-   - Include the `[![Stars](https://img.shields.io/github/stars/<owner>/<repo>?style=social&color=white)](https://github.com/<owner>/<repo>/stargazers)` star badge.
+   - Include the `[![Stars](https://img.shields.io/github/stars/<owner>/<repo>?style=social&color=white)](https://github.com/<owner>/<repo>/stargazers)` Stars_Badge.
    - Add a concise, factual description with primary use cases and pricing transparency.
 4. 🚀 **Submit a Pull Request** with a descriptive summary of your changes.
 
